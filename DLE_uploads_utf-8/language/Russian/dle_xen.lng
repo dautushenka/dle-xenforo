@@ -1,0 +1,6 @@
+<?php
+
+return array(
+    'today_in'  => 'Сегодня в ',
+    'yesterday_in'  => 'Вчера в ',
+);

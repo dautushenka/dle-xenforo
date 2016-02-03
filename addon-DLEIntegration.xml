@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="DLEIntegration" title="DLE Integration" version_string="1.0.0" version_id="1" url="http://kaliostro.net" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="DLEIntegration_Listener" callback_method="loadClassControllerRegister" active="1" hint="XenForo_ControllerPublic_Register" description=""/>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="DLEIntegration_Listener" callback_method="loadClassControllerLogout" active="1" hint="XenForo_ControllerPublic_Logout" description=""/>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="DLEIntegration_Listener" callback_method="loadDataWriterUser" active="1" hint="XenForo_DataWriter_User" description=""/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="DLEIntegration_Listener" callback_method="loadClassModel" active="1" hint="XenForo_Model_User" description=""/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="DLEIntegration_Listener" callback_method="loadClassModel" active="1" hint="XenForo_Model_UserConfirmation" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases/>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications/>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
