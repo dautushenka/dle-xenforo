@@ -1,7 +1,5 @@
 <?php
 
-define('LIC_DOMAIN', /*lic*/'wotwar\.ru'/*/lic*/);
-
 /**
  * Class XenIntegration
  * 
@@ -27,20 +25,7 @@ class XenIntegration
     protected $_parse = null;
 
     protected function __construct()
-    {
-        if (
-            !preg_match("#" . LIC_DOMAIN . "#i", $_SERVER['HTTP_HOST']) &&
-            !preg_match('#localhost#i', $_SERVER['HTTP_HOST']) &&
-            strpos($_SERVER['HTTP_HOST'], $_SERVER['SERVER_ADDR']) === false
-        )
-        {
-            $this->displayAndExit(
-            "Вы используете не лицензионную версию модуля DLE + XenForo.<br/>
-            За информацией обращайтесь на форум <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a><br/>
-            You are not using licensed version of the module DLE + XenForo.<br/>
-            For information, visit the forum <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a>");
-        }
-        
+    {   
         $forumConfigFile = dirname(__FILE__) . "/config.php";
         if (!file_exists($forumConfigFile)) {
             $this->displayAndExit("Вы должны скопировать файл конфигурации %s с форума в папку с модулем интеграции %s", 'library/config.php', $forumConfigFile);
