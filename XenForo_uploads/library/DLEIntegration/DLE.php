@@ -1,7 +1,5 @@
 <?php
 
-define('LIC_DOMAIN', /*lic*/'.'/*/lic*/);
-
 class db {};
 
 class DLEIntegration_DLE
@@ -12,20 +10,6 @@ class DLEIntegration_DLE
 
     protected function __construct()
     {
-        if (
-            !preg_match("#" . LIC_DOMAIN . "#i", $_SERVER['HTTP_HOST']) &&
-            !preg_match('#localhost#i', $_SERVER['HTTP_HOST']) &&
-            strpos($_SERVER['HTTP_HOST'], $_SERVER['SERVER_ADDR']) === false
-        )
-        {
-            @header("Content-type: text/html; charset=UTF-8");
-            echo "Вы используете не лицензионную версию модуля DLE + XenForo.<br/>";
-            echo "За информацией обращайтесь на форум <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a><br/>";
-            echo "You are not using licensed version of the module DLE + XenForo.<br/>";
-            echo "For information, visit the forum <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a>";
-            exit();
-        }
-
         require_once dirname(__FILE__) . '/config/dbconfig.php';
         require_once dirname(__FILE__) . '/config/dle_config.php';
 
